@@ -1,0 +1,492 @@
+@font-face {
+    font-family: 'Opificio Bold Rounded';
+    src: url('font/Opificio_Bold_rounded.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Opificio Bold Rounded', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    max-height: 850px;
+    background-color: #f2f2f2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Status Bar */
+.status-bar {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.network-group,
+.battery-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.five-g {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Header */
+.header {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px 16px 16px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-pic {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #3b82f6;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e3a8a;
+}
+
+/* Image fit inside the circle */
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.person-silhouette {
+    width: 24px;
+    height: 30px;
+    background-color: #93c5fd;
+    border-radius: 12px 12px 0 0;
+}
+
+.greeting {
+    font-size: 18px;
+    font-weight: 700;
+    display: inline-block;
+
+    background: linear-gradient(90deg,
+            #ffd600 0%,
+            #ffb800 20%,
+            #ff6a00 35%,
+            #ff2d2d 50%,
+            #ff6a00 65%,
+            #ffb800 80%,
+            #ffd600 100%);
+
+    background-size: 250% 100%;
+    background-position: 250% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+    animation: flow 12s ease-in-out infinite;
+}
+
+@keyframes flow {
+
+    /* Start */
+    0% {
+        background-position: 250% 0;
+    }
+
+    /* Red + Yellow move */
+    55% {
+        background-position: -20% 0;
+    }
+
+    /* Pause + White */
+    56% {
+        background: none;
+        -webkit-text-fill-color: white;
+    }
+
+
+
+    /* Reset */
+    /* 83% {
+        -webkit-text-fill-color: transparent;
+
+        background: linear-gradient(90deg,
+                #ffd600 0%,
+                #ffb800 20%,
+                #ff6a00 35%,
+                #ff2d2d 50%,
+                #ff6a00 65%,
+                #ffb800 80%,
+                #ffd600 100%);
+
+        background-size: 250% 100%;
+        background-position: 250% 0;
+    } */
+
+    100% {
+        background-position: 250% 0;
+    }
+
+}
+
+.menu-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+* Section Container */ .section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Section Header Styles */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+    letter-spacing: -0.3px;
+}
+
+.wallet-icon {
+    width: 20px;
+    height: 20px;
+    color: #111111;
+}
+
+.arrow-right-icon {
+    width: 18px;
+    height: 18px;
+    color: #111111;
+}
+
+/* Main Outer Card */
+.pending-fees-card {
+    width: 100%;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 14px;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Semester Pink Box */
+.semester-badge {
+    background-color: #fdeeee;
+    border-radius: 10px;
+    padding: 6px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.semester-label {
+    color: #e04a43;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+}
+
+.semester-number {
+    color: #e04a43;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 1px;
+}
+
+/* Middle Details Area */
+.fee-details {
+    flex: 1;
+    margin-left: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.fee-amount {
+    color: #ea3f33;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+/* Due Date Pill */
+.due-date-badge {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    background-color: #fdeeee;
+    color: #e04a43;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    gap: 4px;
+}
+
+.hourglass-icon {
+    width: 10px;
+    height: 10px;
+}
+
+/* Pay Button */
+.pay-button {
+    background-color: #2e8b40;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 2px 14px;
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(46, 139, 64, 0.15);
+    transition: background-color 0.2s ease;
+}
+
+.pay-button:hover {
+    background-color: #267736;
+}
+
+.card-icon {
+    width: 14px;
+    height: 14px;
+}
+
+/* Time Table Card */
+.timetable-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.tt-top {
+    display: flex;
+    height: 50px;
+}
+
+.tt-date {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #555;
+    border-right: 1px solid #eee;
+}
+
+.tt-empty {
+    width: 70%;
+}
+
+.tt-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-top: 1px solid #eee;
+    color: #aaa;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Other Card */
+.other-card {
+    padding: 24px 16px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 24px;
+    column-gap: 8px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.grid-item span {
+    font-size: 11px;
+    color: #333;
+    font-weight: 400;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Specific Icon Colors */
+.announcement-icon {
+    color: #3b82f6;
+}
+
+.grid-item span {
+    font-family: sans-serif;
+}
+
+.transport-icon {
+    color: #f5a623;
+}
+
+.results-icon {
+    color: #ef4444;
+}
+
+.feedback-icon {
+    color: #9ca3af;
+}
+
+.hostel-leave-icon {
+    color: #0d9488;
+}
+
+.hostel-icon {
+    color: #10b981;
+}
+
+.event-icon {
+    color: #ec4899;
+}
+
+.document-icon {
+    color: #0ea5e9;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 16px;
+    color: #999;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Bottom Home Indicator */
+.home-indicator-container {
+    height: 24px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+.home-indicator {
+    width: 120px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Pass App UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">8:22</div>
+            <div class="status-icons">
+                <svg viewBox="0 0 24 24" fill="white" width="14" height="14">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h2v2h-2v-2zm0-8h2v6h-2V8z" />
+                </svg>
+                <div class="network-group">
+                    <span class="five-g">5G</span>
+                    <svg viewBox="0 0 24 24" fill="white" width="14" height="14">
+                        <path d="M2 22h20V2z" />
+                    </svg>
+                </div>
+                <div class="battery-group">
+                    <span>53%</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="20" height="20">
+                        <rect x="2" y="7" width="16" height="10" rx="2" ry="2" />
+                        <path d="M22 11v2" />
+                        <rect x="4" y="9" width="8" height="6" fill="white" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="user-info">
+                <div class="profile-pic">
+                    <img src="images/passpic.jpeg">
+                </div>
+
+                <div class="greeting">
+                    Hi, MEVADA RACHIT
+                </div>
+            </div>
+
+            <div class="menu-icon">
+                <svg viewBox="0 0 24 24" fill="white" width="24" height="24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                </svg>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content">
+
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <svg class="wallet-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M20 7H4C2.89 7 2 7.89 2 9v10c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V9c0-1.11-.89-2-2-2z" />
+                            <path d="M16 11V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v4" />
+                            <circle cx="16" cy="15" r="1" fill="currentColor" />
+                        </svg>
+                        <h2>Pending Fees</h2>
+                    </div>
+                    <svg class="arrow-right-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </div>
+
+                <div class="pending-fees-card">
+                    <!-- Left Semester Badge -->
+                    <div class="semester-badge">
+                        <span class="semester-label">Semester</span>
+                        <span class="semester-number">3</span>
+                    </div>
+
+                    <!-- Center Details -->
+                    <div class="fee-details">
+                        <div class="fee-amount">₹ 30,600</div>
+                        <div class="due-date-badge">
+                            <svg class="hourglass-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
+                            </svg>
+                            <span>07-07-2026 12:00 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Pay Button -->
+                    <button class="pay-button">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="5" width="20" height="14" rx="2" />
+                            <line x1="2" y1="10" x2="22" y2="10" />
+                        </svg>
+                        Pay
+                    </button>
+                </div>
+            </section>
+
+            <!-- Time Table Section -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" width="20" height="20">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <path d="M16 2v4M8 2v4M3 10h18" />
+                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" />
+                        </svg>
+                        <h2>Time Table</h2>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" width="20" height="20">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </div>
+
+                <div class="card timetable-card">
+                    <div class="tt-top">
+                        <div class="tt-date">27/07</div>
+                        <div class="tt-empty"></div>
+                    </div>
+                    <div class="tt-bottom">
+                        No TimeTable
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other Section -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" width="20" height="20">
+                            <circle cx="5" cy="12" r="1.5" />
+                            <circle cx="12" cy="12" r="1.5" />
+                            <circle cx="19" cy="12" r="1.5" />
+                        </svg>
+                        <h2>Other</h2>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" width="20" height="20">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </div>
+
+                <div class="card other-card">
+                    <div class="grid-container">
+                        <!-- Item 1 -->
+                        <div class="grid-item">
+                            <div class="announcement-icon">
+                                <img src="images/announcement.png" width="40" height="40">
+                            </div>
+                            <span>Announcement</span>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="grid-item">
+                            <div class="Transport-icon">
+                                <img src="images/bus.png" width="40" height="40">
+                            </div>
+                            <span>Transport</span>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="grid-item">
+                            <div class="Results-icon">
+                                <img src="images/result.png" width="40" height="40">
+                            </div>
+                            <span>Results</span>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="grid-item">
+                            <div class="Feedback-icon">
+                                <img src="images/phone.png" width="40" height="40">
+                            </div>
+                            <span>Feedback</span>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="grid-item">
+                            <div class="Hostel-Leave-icon">
+                                <img src="images/hostel leave.png" width="40" height="40">
+                            </div>
+                            <span>Hostel Leave</span>
+                        </div>
+                        <!-- Item 6 -->
+                        <div class="grid-item">
+                            <div class="Hostel-icon">
+                                <img src="images/hostel.png" width="40" height="40">
+                            </div>
+                            <span>Hostel</span>
+                        </div>
+                        <!-- Item 7 -->
+                        <div class="grid-item">
+                            <div class="Event-icon">
+                                <img src="images/ticket.png" width="40" height="40">
+                            </div>
+                            <span>Event</span>
+                        </div>
+                        <!-- Item 8 -->
+                        <div class="grid-item">
+                            <div class="Document-icon">
+                                <img src="images/document.png" width="40" height="40">
+                            </div>
+                            <span>Document</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            App Version: 3.0.0
+        </footer>
+
+        <!-- Bottom Home Indicator -->
+        <div class="home-indicator-container">
+            <div class="home-indicator"></div>
+        </div>
+    </div>
+</body>
+
+</html>
