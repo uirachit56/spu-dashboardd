@@ -23,30 +23,6 @@
 
 <body>
     <div class="app-container">
-        <!-- Status Bar -->
-        <div class="status-bar">
-            <div class="time">8:22</div>
-            <div class="status-icons">
-                <svg viewBox="0 0 24 24" fill="white" width="14" height="14">
-                    <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h2v2h-2v-2zm0-8h2v6h-2V8z" />
-                </svg>
-                <div class="network-group">
-                    <span class="five-g">5G</span>
-                    <svg viewBox="0 0 24 24" fill="white" width="14" height="14">
-                        <path d="M2 22h20V2z" />
-                    </svg>
-                </div>
-                <div class="battery-group">
-                    <span>53%</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="20" height="20">
-                        <rect x="2" y="7" width="16" height="10" rx="2" ry="2" />
-                        <path d="M22 11v2" />
-                        <rect x="4" y="9" width="8" height="6" fill="white" />
-                    </svg>
-                </div>
-            </div>
-        </div>
 
         <!-- Header -->
         <header class="header">
@@ -231,12 +207,6 @@
         <footer class="footer">
             App Version: 3.0.0
         </footer>
-
-        <!-- Bottom Home Indicator -->
-        <div class="home-indicator-container">
-            <div class="home-indicator"></div>
-        </div>
-    </div>
     <script>
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
