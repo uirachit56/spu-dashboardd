@@ -1,0 +1,564 @@
+
+
+
+/* ==========================
+        PAGE
+========================== */
+
+.page{
+    width:100%;
+    max-width:420px;
+}
+
+
+/* ==========================
+        HEADER
+========================== */
+
+.topbar{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:18px;
+}
+
+.back-btn{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:#fff;
+    font-size:22px;
+    cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+
+.topbar h2{
+    font-size:27px;
+    font-weight:700;
+}
+
+
+/* ==========================
+        CARD
+========================== */
+
+.bus-card{
+
+    position:relative;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    padding:18px;
+
+    box-shadow:
+    0 8px 24px rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================
+        BG
+========================== */
+
+.card-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url(images/buspass-bg.png);
+
+    background-size:cover;
+
+    background-position:center;
+
+    opacity:.18;
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================
+        TOP
+========================== */
+
+.card-top{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    z-index:2;
+
+}
+
+.student-photo{
+
+    width:96px;
+
+    height:118px;
+
+    border-radius:8px;
+
+    object-fit:cover;
+
+    border:2px solid #d8d8d8;
+
+    background:#fff;
+
+}
+
+.top-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+}
+
+.bus-image{
+
+    width:92px;
+
+    margin-bottom:10px;
+
+}
+
+.status{
+
+    background:#161313;
+
+    color:#fff;
+
+    padding:8px 22px;
+
+    border-radius:14px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================
+      PASS NUMBER
+========================== */
+
+.pass-number{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    margin-top:18px;
+
+    background:#1a1313;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:12px;
+
+    border-radius:30px;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================
+     STUDENT
+========================== */
+
+.student{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:18px;
+
+}
+
+.student h2{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    color:#1f1f1f;
+
+    margin-bottom:10px;
+
+}
+
+.student p{
+
+    font-size:26px;
+
+    color:#444;
+
+}
+
+/* ==========================
+        INFO SECTION
+========================== */
+
+.info{
+    position:relative;
+    z-index:2;
+    margin-top:26px;
+}
+
+.info label{
+    display:block;
+    font-size:24px;
+    color:#666;
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+.info h3{
+    font-size:38px;
+    color:#222;
+    line-height:1.25;
+    font-weight:700;
+}
+
+
+/* ==========================
+        FEES
+========================== */
+
+.fees{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:34px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+}
+
+.fees div{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.fees span{
+
+    font-size:21px;
+
+    color:#555;
+
+    margin-bottom:8px;
+
+}
+
+.fees h4{
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+
+/* Amount */
+
+.fees div:nth-child(1) h4{
+    color:#0079d8;
+}
+
+/* Paid */
+
+.fees div:nth-child(2) h4{
+    color:#1ea84a;
+}
+
+/* Pending */
+
+.fees div:nth-child(3) h4{
+    color:#111;
+}
+
+
+/* ==========================
+        DATE
+========================== */
+
+.date{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:70px;
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#222;
+
+}
+
+
+/* ==========================
+      MOBILE
+========================== */
+
+@media(max-width:430px){
+
+.student h2{
+    font-size:28px;
+}
+
+.student p{
+    font-size:18px;
+}
+
+.pass-number{
+    font-size:16px;
+}
+
+.info label{
+    font-size:16px;
+}
+
+.info h3{
+    font-size:24px;
+}
+
+.fees span{
+    font-size:14px;
+}
+
+.fees h4{
+    font-size:22px;
+}
+
+.date{
+    font-size:24px;
+}
+
+.bus-image{
+    width:72px;
+}
+
+.student-photo{
+    width:82px;
+    height:102px;
+}
+
+.status{
+    font-size:16px;
+    padding:6px 16px;
+}
+
+}
+
+/* ==========================
+        FINAL POLISH
+========================== */
+
+.bus-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    border:1px solid #ececec;
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.08);
+
+    overflow:hidden;
+
+}
+
+
+/* Background */
+
+.card-bg{
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    background-size:cover;
+
+    opacity:.16;
+
+}
+
+
+/* Photo */
+
+.student-photo{
+
+    box-shadow:
+    0 2px 10px rgba(0,0,0,.12);
+
+}
+
+
+/* Bus */
+
+.bus-image{
+
+    display:block;
+
+    margin-left:auto;
+
+}
+
+
+/* Active */
+
+.status{
+
+    min-width:105px;
+
+    text-align:center;
+
+    letter-spacing:.3px;
+
+}
+
+
+/* Pass Number */
+
+.pass-number{
+
+    letter-spacing:.3px;
+
+}
+
+
+/* Headings */
+
+.student h2{
+
+    letter-spacing:.2px;
+
+}
+
+.info h3{
+
+    letter-spacing:.15px;
+
+}
+
+
+/* Fees */
+
+.fees{
+
+    align-items:flex-start;
+
+}
+
+.fees div{
+
+    text-align:left;
+
+}
+
+
+/* Date */
+
+.date{
+
+    padding-bottom:8px;
+
+}
+
+
+/* Hover */
+
+.back-btn{
+
+    transition:.25s;
+
+}
+
+.back-btn:hover{
+
+    transform:scale(1.06);
+
+}
+
+
+/* Smooth */
+
+body{
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
+}
+
+
+/* Images */
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+
+/* Mobile Safe */
+
+@media(max-width:420px){
+
+.page{
+
+    width:100%;
+
+}
+
+.bus-card{
+
+    padding:16px;
+
+}
+
+}
+.grid-item.link-card {
+    text-decoration: none;
+    cursor: pointer;
+}
