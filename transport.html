@@ -1,202 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Pass</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="transport.css">
-
-    <link rel="manifest" href="manifest.json">
-
-    <meta name="theme-color" content="#000000">
 </head>
-
 <body>
-
-    <div class="page">
-
-        <!-- Header -->
-
-        <header class="topbar">
-
-            <button class="back-btn" onclick="history.back()">
-                ←
-            </button>
-
-            <h2>Bus Pass</h2>
-
+    <div class="app-container">
+        
+        <header class="header">
+            <div class="tabs">
+                <div class="tab active">
+                    <span class="tab-text">Bus Pass</span>
+                    <div class="underline"></div>
+                </div>
+                <div class="tab inactive">
+                    <span class="tab-text">Receipt</span>
+                    <span class="badge">1</span>
+                </div>
+            </div>
         </header>
 
-
-
-        <!-- Card -->
-
-        <section class="bus-card">
-
-            <!-- Background -->
-
-            <div class="card-bg"></div>
-
-
-
-            <!-- Top -->
-
-            <div class="card-top">
-
-                <img
-                    src="images/passpic.jpeg"
-                    class="student-photo">
-
-                <div class="top-right">
-
-                    <img
-                        src="images/bus.png"
-                        class="bus-image">
-
-                    <div class="status">
-
-                        Active
-
+        <div class="card">
+            <div class="card-header">
+                <div class="profile">
+                    <img src="images/avtar.jpeg" alt="Profile" class="profile-img">
+                </div>
+                <div class="card-top-right">
+                    <div class="bus-status-row">
+                        <img src="images/bus.png" alt="Bus" class="bus-img">
+                        <div class="status-badge">Active</div>
                     </div>
+                    <div class="pass-number">
+                        Bus Pass No.<strong>26/S/6989/014</strong>
+                    </div>
+                </div>
+            </div>
 
+            <div class="card-body">
+                <div class="student-info">
+                    <h1 class="student-name">MEVADA RACHIT</h1>
+                    <p class="student-details">(Sem-3 | 26UG010170 | SPCE-CE-3)</p>
                 </div>
 
-            </div>
-
-
-
-            <!-- Pass Number -->
-
-            <div class="pass-number">
-
-                Bus Pass No.26/S/6989/014
-
-            </div>
-
-
-
-            <!-- Student -->
-
-            <div class="student">
-
-                <h2>MEVADA RACHIT</h2>
-
-                <p>(Sem-3 | 26UG010170 | SPCE-CE-3)</p>
-
-            </div>
-
-
-
-            <!-- Pickup -->
-
-            <div class="info">
-
-                <label>Pickup Point</label>
-
-                <h3>ગઠામણ પાટીયા</h3>
-
-            </div>
-
-
-
-            <!-- Shift -->
-
-            <div class="info">
-
-                <label>Shift & Timings</label>
-
-                <h3>
-
-                    Shift-1 (Morning Shift)
-
-                    <br>
-
-                    (09:00 AM to 04:00 PM)
-
-                </h3>
-
-            </div>
-
-
-
-            <!-- Duration -->
-
-            <div class="info">
-
-                <label>Duration</label>
-
-                <h3>
-
-                    01-07-2026 to 31-12-2026
-
-                </h3>
-
-            </div>
-
-
-
-            <!-- Route -->
-
-            <div class="info">
-
-                <label>Route</label>
-
-                <h3>
-
-                    R007 - SPU-Palanpur 2
-
-                </h3>
-
-            </div>
-
-
-
-            <!-- Fees -->
-
-            <div class="fees">
-
-                <div>
-
-                    <span>Fees Amount</span>
-
-                    <h4>₹10,500</h4>
-
+                <div class="details-section">
+                    <div class="detail-group">
+                        <div class="detail-label">Pickup Point</div>
+                        <div class="detail-value">Gathaman Patiya - ગાથામણ પાટિયા</div>
+                    </div>
+                    
+                    <div class="detail-group">
+                        <div class="detail-label">Shift & Timings</div>
+                        <div class="detail-value">Shift-1 (Morning Shift)(09:00 AM to<br>04:00 PM)</div>
+                    </div>
+                    
+                    <div class="detail-group">
+                        <div class="detail-label">Duration</div>
+                        <div class="detail-value">01-07-2026 to 31-12-2026</div>
+                    </div>
+                    
+                    <div class="detail-group">
+                        <div class="detail-label">Route</div>
+                        <div class="detail-value">Route R007 - SPU-Palanpur 2</div>
+                    </div>
                 </div>
 
-                <div>
-
-                    <span>Fees Paid</span>
-
-                    <h4>₹10,500</h4>
-
+                <div class="fees-section">
+                    <div class="fee-item">
+                        <div class="fee-label">Fees Amount</div>
+                        <div class="fee-value fee-blue">₹ 10,500</div>
+                    </div>
+                    <div class="fee-item">
+                        <div class="fee-label">Fees Paid</div>
+                        <div class="fee-value fee-green">₹ 10,500</div>
+                    </div>
+                    <div class="fee-item">
+                        <div class="fee-label">Pending Amount</div>
+                        <div class="fee-value fee-black">₹ 0</div>
+                    </div>
                 </div>
-
-                <div>
-
-                    <span>Pending Amount</span>
-
-                    <h4>₹0</h4>
-
-                </div>
-
             </div>
+        </div>
 
-
-
-            <!-- Date -->
-
-            <div class="date">
-
-                27-07-2026
-
-            </div>
-
-        </section>
-
+        <div class="clock-section">
+            <div class="date-display" id="current-date">27-07-2026</div>
+            <div class="time-display" id="current-time">21:26:13</div>
+        </div>
     </div>
 
-</body>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            
+            // Format time
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
+            
+            // Format date
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+            const year = now.getFullYear();
+            document.getElementById('current-date').textContent = `${day}-${month}-${year}`;
+        }
 
+        // Initialize and set interval
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
 </html>

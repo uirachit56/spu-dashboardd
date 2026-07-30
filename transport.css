@@ -1,564 +1,354 @@
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+:root {
+    --bg-app: #EEEEEE;
+    --text-main: #000000;
+    --text-muted: #5B5B5B;
+    --text-light-muted: #757575;
+    --color-blue: #004D91;
+    --color-green: #85BB65;
+    --color-clock: #003F7A;
+    --font-family: 'Inter', sans-serif;
+}
 
+/* ==========================================================================
+   Body
+   ========================================================================== */
+body {
+    background-color: #D3D3D3; /* Darker background for contrast outside app */
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
 
-/* ==========================
-        PAGE
-========================== */
+/* ==========================================================================
+   Container
+   ========================================================================== */
+.app-container {
+    width: 390px;
+    min-height: 100vh;
+    background-color: var(--bg-app);
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding-bottom: 40px;
+}
 
-.page{
-    width:100%;
-    max-width:420px;
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.header {
+    background-color: var(--bg-app);
+    padding: 16px 20px 0 20px;
+}
+
+/* ==========================================================================
+   Tabs
+   ========================================================================== */
+.tabs {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 12px;
+}
+
+.tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+    cursor: default;
+}
+
+.tab-text {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.tab.active .tab-text {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.tab.inactive .tab-text {
+    color: #7B7B7B;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-main);
+}
+
+.badge {
+    background-color: #424242;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   Card
+   ========================================================================== */
+.card {
+    background-image: url("images/pass-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+    background-color: white;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    padding-bottom: 0;
+}
+
+.card-top-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: -4px; /* Pull to the right edge */
+}
+
+.card-body {
+    padding: 16px;
+    padding-top: 12px;
+}
+
+/* ==========================================================================
+   Profile
+   ========================================================================== */
+.profile {
+    width: 76px;
+    height: 98px;
+    border: 2px solid white;
+    border-radius: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    /* FIX: This forces the image inside to clip to the border-radius */
+    overflow: hidden; 
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 
-/* ==========================
-        HEADER
-========================== */
-
-.topbar{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-bottom:18px;
+/* ==========================================================================
+   Bus
+   ========================================================================== */
+.bus-status-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    margin-right: 0px;
 }
 
-.back-btn{
-    width:42px;
-    height:42px;
-    border:none;
-    border-radius:50%;
-    background:#fff;
-    font-size:22px;
-    cursor:pointer;
-    box-shadow:0 2px 8px rgba(0,0,0,.12);
+.bus-img {
+    width: 80px;
+    height: auto;
 }
 
-.topbar h2{
-    font-size:27px;
-    font-weight:700;
+/* ==========================================================================
+   Badge
+   ========================================================================== */
+.status-badge {
+    background-color: #000;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 15px 0px 0px 15px;
 }
 
-
-/* ==========================
-        CARD
-========================== */
-
-.bus-card{
-
-    position:relative;
-
-    background:#fff;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    padding:18px;
-
-    box-shadow:
-    0 8px 24px rgba(0,0,0,.08);
-
+.pass-number {
+    background-color: #000;
+    color: #FFF;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 15px 0px 0px 15px;
 }
 
-
-/* ==========================
-        BG
-========================== */
-
-.card-bg{
-
-    position:absolute;
-
-    inset:0;
-
-    background-image:url(images/buspass-bg.png);
-
-    background-size:cover;
-
-    background-position:center;
-
-    opacity:.18;
-
-    pointer-events:none;
-
+/* .status-badge {
+    background-color: #000;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
+.pass-number {
+    background-color: #000;
+    color: #FFF;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    text-align: right;
+} */
 
-/* ==========================
-        TOP
-========================== */
-
-.card-top{
-
-    position:relative;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:flex-start;
-
-    z-index:2;
-
+.pass-number strong {
+    font-weight: 600;
 }
 
-.student-photo{
-
-    width:96px;
-
-    height:118px;
-
-    border-radius:8px;
-
-    object-fit:cover;
-
-    border:2px solid #d8d8d8;
-
-    background:#fff;
-
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+.student-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
 }
 
-.top-right{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-end;
-
+.student-details {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 18px;
 }
 
-.bus-image{
-
-    width:92px;
-
-    margin-bottom:10px;
-
+/* ==========================================================================
+   Details
+   ========================================================================== */
+.details-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
 }
 
-.status{
-
-    background:#161313;
-
-    color:#fff;
-
-    padding:8px 22px;
-
-    border-radius:14px;
-
-    font-size:20px;
-
-    font-weight:700;
-
+.detail-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
-
-/* ==========================
-      PASS NUMBER
-========================== */
-
-.pass-number{
-
-    position:relative;
-
-    z-index:2;
-
-    width:100%;
-
-    margin-top:18px;
-
-    background:#1a1313;
-
-    color:#fff;
-
-    text-align:center;
-
-    padding:12px;
-
-    border-radius:30px;
-
-    font-size:22px;
-
-    font-weight:600;
-
+.detail-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 400;
 }
 
-
-/* ==========================
-     STUDENT
-========================== */
-
-.student{
-
-    position:relative;
-
-    z-index:2;
-
-    margin-top:18px;
-
+.detail-value {
+    font-size: 15px;
+    color: var(--text-main);
+    font-weight: 500;
+    line-height: 1.3;
 }
 
-.student h2{
-
-    font-size:40px;
-
-    font-weight:700;
-
-    color:#1f1f1f;
-
-    margin-bottom:10px;
-
+/* ==========================================================================
+   Fees
+   ========================================================================== */
+.fees-section {
+    display: flex;
+    justify-content: flex-start;
+    gap: 32px;
+    margin-top: 16px;
+    padding-bottom: 8px;
 }
 
-.student p{
-
-    font-size:26px;
-
-    color:#444;
-
+.fee-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-/* ==========================
-        INFO SECTION
-========================== */
-
-.info{
-    position:relative;
-    z-index:2;
-    margin-top:26px;
+.fee-label {
+    font-size: 13px;
+    color: var(--text-main);
+    font-weight: 400;
 }
 
-.info label{
-    display:block;
-    font-size:24px;
-    color:#666;
-    margin-bottom:8px;
-    font-weight:500;
+.fee-value {
+    font-size: 15px;
+    font-weight: 600;
 }
 
-.info h3{
-    font-size:38px;
-    color:#222;
-    line-height:1.25;
-    font-weight:700;
+.fee-blue {
+    color: var(--color-blue);
 }
 
-
-/* ==========================
-        FEES
-========================== */
-
-.fees{
-
-    position:relative;
-
-    z-index:2;
-
-    margin-top:34px;
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:12px;
-
+.fee-green {
+    color: var(--color-green);
 }
 
-.fees div{
-
-    display:flex;
-
-    flex-direction:column;
-
+.fee-black {
+    color: var(--text-main);
 }
 
-.fees span{
-
-    font-size:21px;
-
-    color:#555;
-
-    margin-bottom:8px;
-
+/* ==========================================================================
+   Date & Clock
+   ========================================================================== */
+.clock-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 28px;
 }
 
-.fees h4{
-
-    font-size:34px;
-
-    font-weight:700;
-
+.date-display {
+    color: var(--color-clock);
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 
-
-/* Amount */
-
-.fees div:nth-child(1) h4{
-    color:#0079d8;
+.time-display {
+    color: var(--color-clock);
+    font-size: 58px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 1;
 }
 
-/* Paid */
-
-.fees div:nth-child(2) h4{
-    color:#1ea84a;
-}
-
-/* Pending */
-
-.fees div:nth-child(3) h4{
-    color:#111;
-}
-
-
-/* ==========================
-        DATE
-========================== */
-
-.date{
-
-    position:relative;
-
-    z-index:2;
-
-    margin-top:70px;
-
-    text-align:center;
-
-    font-size:34px;
-
-    font-weight:700;
-
-    color:#222;
-
-}
-
-
-/* ==========================
-      MOBILE
-========================== */
-
-@media(max-width:430px){
-
-.student h2{
-    font-size:28px;
-}
-
-.student p{
-    font-size:18px;
-}
-
-.pass-number{
-    font-size:16px;
-}
-
-.info label{
-    font-size:16px;
-}
-
-.info h3{
-    font-size:24px;
-}
-
-.fees span{
-    font-size:14px;
-}
-
-.fees h4{
-    font-size:22px;
-}
-
-.date{
-    font-size:24px;
-}
-
-.bus-image{
-    width:72px;
-}
-
-.student-photo{
-    width:82px;
-    height:102px;
-}
-
-.status{
-    font-size:16px;
-    padding:6px 16px;
-}
-
-}
-
-/* ==========================
-        FINAL POLISH
-========================== */
-
-.bus-card{
-
-    background:#ffffff;
-
-    border-radius:18px;
-
-    border:1px solid #ececec;
-
-    box-shadow:
-    0 8px 30px rgba(0,0,0,.08);
-
-    overflow:hidden;
-
-}
-
-
-/* Background */
-
-.card-bg{
-
-    background-repeat:no-repeat;
-
-    background-position:center;
-
-    background-size:cover;
-
-    opacity:.16;
-
-}
-
-
-/* Photo */
-
-.student-photo{
-
-    box-shadow:
-    0 2px 10px rgba(0,0,0,.12);
-
-}
-
-
-/* Bus */
-
-.bus-image{
-
-    display:block;
-
-    margin-left:auto;
-
-}
-
-
-/* Active */
-
-.status{
-
-    min-width:105px;
-
-    text-align:center;
-
-    letter-spacing:.3px;
-
-}
-
-
-/* Pass Number */
-
-.pass-number{
-
-    letter-spacing:.3px;
-
-}
-
-
-/* Headings */
-
-.student h2{
-
-    letter-spacing:.2px;
-
-}
-
-.info h3{
-
-    letter-spacing:.15px;
-
-}
-
-
-/* Fees */
-
-.fees{
-
-    align-items:flex-start;
-
-}
-
-.fees div{
-
-    text-align:left;
-
-}
-
-
-/* Date */
-
-.date{
-
-    padding-bottom:8px;
-
-}
-
-
-/* Hover */
-
-.back-btn{
-
-    transition:.25s;
-
-}
-
-.back-btn:hover{
-
-    transform:scale(1.06);
-
-}
-
-
-/* Smooth */
-
-body{
-
-    -webkit-font-smoothing:antialiased;
-
-    -moz-osx-font-smoothing:grayscale;
-
-}
-
-
-/* Images */
-
-img{
-
-    user-select:none;
-
-    -webkit-user-drag:none;
-
-}
-
-
-/* Mobile Safe */
-
-@media(max-width:420px){
-
-.page{
-
-    width:100%;
-
-}
-
-.bus-card{
-
-    padding:16px;
-
-}
-
-}
-.grid-item.link-card {
-    text-decoration: none;
-    cursor: pointer;
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media screen and (max-width: 390px) {
+    body {
+        background-color: var(--bg-app);
+    }
+    .app-container {
+        box-shadow: none;
+    }
 }
