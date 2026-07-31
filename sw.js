@@ -1,4 +1,4 @@
-const CACHE_NAME = "spu-dashboard-v1";
+const CACHE_NAME = "spu-dashboard-v2";
 
 const urlsToCache = [
   "/",
