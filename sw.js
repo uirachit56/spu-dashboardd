@@ -22,7 +22,7 @@
 //   );
 // });
 
-const CACHE_NAME = "spu-dashboard-v10";
+const CACHE_NAME = "spu-dashboard-v15";
 
 const urlsToCache = [
   "/",
