@@ -10,7 +10,16 @@
 <body>
     <div class="app-container">
         
-        <header class="header">
+        <header class="top-nav">
+            <div class="nav-left">
+                <!-- <span class="back-arrow"></span> -->
+                <span class="back-arrow" onclick="goBack()"></span>
+                <span class="nav-title">Transport Summary</span>
+            </div>
+            <div class="nav-right">Pay Fees</div>
+        </header>
+
+        <div class="tabs-container">
             <div class="tabs">
                 <div class="tab active">
                     <span class="tab-text">Bus Pass</span>
@@ -21,9 +30,10 @@
                     <span class="badge">1</span>
                 </div>
             </div>
-        </header>
+        </div>
 
         <div class="card">
+           <div class="card-blur-glow"></div>
             <div class="card-header">
                 <div class="profile">
                     <img src="images/avtar.jpeg" alt="Profile" class="profile-img">
@@ -63,7 +73,7 @@
                     
                     <div class="detail-group">
                         <div class="detail-label">Route</div>
-                        <div class="detail-value">Route R007 - SPU-Palanpur 2</div>
+                        <div class="detail-value">R007 - SPU-Palanpur 2</div>
                     </div>
                 </div>
 
@@ -91,25 +101,28 @@
     </div>
 
     <script>
+
+        function goBack() {
+    window.location.href = 'index.html';
+}
         function updateClock() {
             const now = new Date();
             
-            // Format time
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
             document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
             
-            // Format date
             const day = String(now.getDate()).padStart(2, '0');
-            const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+            const month = String(now.getMonth() + 1).padStart(2, '0');
             const year = now.getFullYear();
             document.getElementById('current-date').textContent = `${day}-${month}-${year}`;
         }
 
-        // Initialize and set interval
         updateClock();
         setInterval(updateClock, 1000);
+
+        
     </script>
 </body>
 </html>

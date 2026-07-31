@@ -11,13 +11,12 @@
    Variables
    ========================================================================== */
 :root {
-    --bg-app: #EEEEEE;
+    --bg-app: #EAEAEA;
     --text-main: #000000;
     --text-muted: #5B5B5B;
-    --text-light-muted: #757575;
     --color-blue: #004D91;
-    --color-green: #85BB65;
-    --color-clock: #003F7A;
+    --color-green: #2E8138;
+    --color-clock: #004586;
     --font-family: 'Inter', sans-serif;
 }
 
@@ -25,7 +24,7 @@
    Body
    ========================================================================== */
 body {
-    background-color: #D3D3D3; /* Darker background for contrast outside app */
+    background-color: #C0C0C0;
     font-family: var(--font-family);
     display: flex;
     justify-content: center;
@@ -41,7 +40,7 @@ body {
     min-height: 100vh;
     background-color: var(--bg-app);
     position: relative;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     padding-bottom: 40px;
 }
@@ -49,18 +48,80 @@ body {
 /* ==========================================================================
    Header
    ========================================================================== */
-.header {
-    background-color: var(--bg-app);
-    padding: 16px 20px 0 20px;
+.top-nav {
+    background-color: #000000;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.back-arrow {
+    display: inline-block;
+    width: 35px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Horizontal stem */
+.back-arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 16px;
+    height: 2.5px;
+    background-color: #FFFFFF;
+    transform: translateY(-50%);
+    border-radius: 2px;
+}
+
+/* Chevron arms */
+.back-arrow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    width: 8px;
+    height: 8px;
+    border-left: 2.5px solid #FFFFFF;
+    border-bottom: 2.5px solid #FFFFFF;
+    transform: translateY(-50%) rotate(45deg);
+    border-top-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+
+.nav-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-right {
+    font-size: 15px;
+    font-weight: 500;
 }
 
 /* ==========================================================================
    Tabs
    ========================================================================== */
+.tabs-container {
+    background-color: #EAEAEA;
+    padding: 0 20px;
+}
+
 .tabs {
     display: flex;
     gap: 24px;
-    margin-bottom: 12px;
+    padding-top: 16px;
 }
 
 .tab {
@@ -68,12 +129,11 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding-bottom: 8px;
-    cursor: default;
+    padding-bottom: 12px;
 }
 
 .tab-text {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -83,7 +143,7 @@ body {
 }
 
 .tab.inactive .tab-text {
-    color: #7B7B7B;
+    color: #888888;
 }
 
 .underline {
@@ -91,17 +151,19 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 3px;
     background-color: var(--text-main);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 }
 
 .badge {
-    background-color: #424242;
+    background-color: #7A7A7A;
     color: white;
     font-size: 12px;
     font-weight: 600;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,32 +176,36 @@ body {
 .card {
     background-image: url("images/pass-bg.png");
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
-    margin: 0 12px;
+    margin: 5px;
     border-radius: 12px;
     overflow: hidden;
-    /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
-    background-color: white;
+    /* box-shadow: 0 4px 12px rgba(0,0,0,0.08); */
+    background-color: #FFFFFF;
+    position: relative; /* Ensure card is relative container */
+}
+
+.card-blur-glow {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 250px;
+    border-radius: 0px;
+    background: radial-gradient(circle, rgb(184 184 184 / 14%) -100%, rgba(0, 0, 0, 0.55) 125%, rgb(0, 0, 0) 125%);
+    filter: blur(75px);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .card-header {
     display: flex;
     justify-content: space-between;
-    padding: 12px;
-    padding-bottom: 0;
-}
-
-.card-top-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: -4px; /* Pull to the right edge */
-}
-
-.card-body {
-    padding: 16px;
-    padding-top: 12px;
+    padding: 11px 9px 0px 6px; /* Top and Left padding only. Right is 0 for flush elements */
+    position: relative;
+    z-index: 2; /* Keeps avatar, bus, badges, and text layered on top */
 }
 
 /* ==========================================================================
@@ -166,42 +232,30 @@ body {
 /* ==========================================================================
    Bus
    ========================================================================== */
-.bus-status-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-    margin-right: 0px;
-}
-
 .bus-img {
-    width: 80px;
+    width: 55px;
     height: auto;
 }
 
 /* ==========================================================================
-   Badge
+   Badge & Alignment
    ========================================================================== */
+.card-top-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.bus-status-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0px;
+}
+
 .status-badge {
-    background-color: #000;
-    color: #FFF;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 4px 12px;
-    border-radius: 15px 0px 0px 15px;
-}
-
-.pass-number {
-    background-color: #000;
-    color: #FFF;
-    font-size: 13px;
-    padding: 4px 12px;
-    border-radius: 15px 0px 0px 15px;
-}
-
-/* .status-badge {
-    background-color: #000;
-    color: #FFF;
+    background-color: #000000;
+    color: #FFFFFF;
     font-size: 13px;
     font-weight: 500;
     padding: 6px 16px;
@@ -212,40 +266,49 @@ body {
 }
 
 .pass-number {
-    background-color: #000;
-    color: #FFF;
+    background-color: #000000;
+    color: #FFFFFF;
     font-size: 13px;
-    padding: 6px 12px;
+    padding: 6px 14px 6px 20px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    width: 100%;
-    text-align: right;
-} */
+}
 
 .pass-number strong {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* ==========================================================================
    Typography
    ========================================================================== */
+.card-body {
+    padding: 7px;
+    padding-top: 12px;
+    padding-bottom: 40px;
+}
+
 .student-name {
     font-size: 18px;
     font-weight: 700;
     color: var(--text-main);
     text-transform: uppercase;
-    margin-bottom: 4px;
-    letter-spacing: -0.2px;
+    margin-bottom: 2px;
+    letter-spacing: -0.3px;
+    position: relative;
+    z-index: 2;
 }
 
 .student-details {
     font-size: 15px;
     font-weight: 400;
     color: var(--text-muted);
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
 }
+
 
 /* ==========================================================================
    Details
@@ -253,14 +316,16 @@ body {
 .details-section {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: 14px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .detail-group {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
 }
 
 .detail-label {
@@ -273,7 +338,7 @@ body {
     font-size: 15px;
     color: var(--text-main);
     font-weight: 500;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 /* ==========================================================================
@@ -282,9 +347,8 @@ body {
 .fees-section {
     display: flex;
     justify-content: flex-start;
-    gap: 32px;
-    margin-top: 16px;
-    padding-bottom: 8px;
+    gap: 28px;
+    padding-bottom: 6px;
 }
 
 .fee-item {
@@ -294,14 +358,14 @@ body {
 }
 
 .fee-label {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-main);
     font-weight: 400;
 }
 
 .fee-value {
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 .fee-blue {
@@ -323,7 +387,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 28px;
+    margin-top: 15px;
 }
 
 .date-display {
@@ -337,7 +401,7 @@ body {
     color: var(--color-clock);
     font-size: 58px;
     font-weight: 600;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
     line-height: 1;
 }
 
