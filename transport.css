@@ -36,7 +36,7 @@ body {
    Container
    ========================================================================== */
 .app-container {
-    width: 390px;
+    width: 400px;
     min-height: 100vh;
     background-color: var(--bg-app);
     position: relative;
